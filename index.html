@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<head>
+    <title>HASI</title>
+</head>
+
+<body>
+
+    <h3>pic</h3>
+    <p>ostrich</p>
+    <p>
+        <img id="ostrich" src="https://eloquentjavascript.net/img/ostrich.png" alt="ostrich">
+    </p>
+    <button onclick="getSource()">getSource</button>
+
+    <p>
+        One
+    </p>
+    <p>
+        Two
+    </p>
+    <p>
+        Three
+    </p>
+    <button onclick="onPress()">Replace Position</button>
+
+</body>
+
+<script>
+
+    function getSource(){
+        let ostrich = document.getElementById("ostrich");
+        if (ostrich){
+            let source = ostrich.src;
+            console.log(source);
+        }
+    }
+
+
+    function onPress() {
+        let paragraphs = document.body.getElementsByTagName("p");
+        let insert = document.body.insertBefore(paragraphs[1], paragraphs[0]);
+
+        if (insert) {
+            console.log("position changed");
+        }
+
+        console.log(insert);
+    }
+
+    
+</script>
+
+</html>
